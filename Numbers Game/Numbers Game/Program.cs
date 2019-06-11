@@ -71,6 +71,8 @@ namespace Numbers_Game
                 sum += number;
             }
 
+            //TODO Custom Exception, if sum under 20 value too low
+
             return sum;
         }
 
