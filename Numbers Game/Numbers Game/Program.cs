@@ -31,7 +31,19 @@ namespace Numbers_Game
 
             int[] userArray = new int[givenNumber];
 
-            Populate(userArray);
+            try
+            {
+                Populate(userArray);
+            }
+            catch (FormatException fe)
+            {
+                Console.WriteLine($"{fe.Message}");
+            }
+            catch (OverflowException oe)
+            {
+                Console.WriteLine($"{oe.Message}");
+            }
+
         }
 
         static int[] Populate(int[] arr)
