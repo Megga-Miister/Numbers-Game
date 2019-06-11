@@ -33,7 +33,9 @@ namespace Numbers_Game
 
             try
             {
-                Populate(userArray);
+                int[] displayArray = Populate(userArray);
+                int displaySum = GetSum(displayArray);
+               
             }
             catch (FormatException fe)
             {
@@ -60,10 +62,17 @@ namespace Numbers_Game
             return arr;
         }
 
-        //static int GetSum(int[] arr)
-        //{
+        static int GetSum(int[] arr)
+        {
+            int sum = 0;
 
-        //}
+            foreach (int number in arr)
+            {
+                sum += number;
+            }
+
+            return sum;
+        }
 
         //static int GetProduct(int[] arr, int sum)
         //{
