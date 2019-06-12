@@ -37,7 +37,17 @@ namespace Numbers_Game
                 int displaySum = GetSum(displayArray);
                 int displayProduct = GetProduct(displayArray,displaySum);
                 decimal displayQuotient = GetQuotient(displayProduct);
-               
+
+                int multiplier = displayProduct / displaySum;
+                decimal displayDivisor = displayProduct / displayQuotient;
+
+                Console.WriteLine($"Your array size is: {displayArray.Length}");
+                Console.WriteLine($"The numbers in your array are {displayArray}");
+                Console.WriteLine($"The sum of the array is {displaySum}");
+                Console.WriteLine($"{displaySum} * {multiplier} = {displayProduct}");
+                Console.WriteLine($"{displayProduct} / {displayDivisor} = {displayQuotient}");
+
+
             }
             catch (FormatException fe)
             {
@@ -47,7 +57,6 @@ namespace Numbers_Game
             {
                 Console.WriteLine(oe.Message);
             }
-
         }
 
         static int[] Populate(int[] arr)
@@ -85,11 +94,11 @@ namespace Numbers_Game
         {
             Console.WriteLine($"Please select a random number between 1 and {arr.Length}.");
             string givenIndex = Console.ReadLine();
-            int indexSelection = Convert.ToInt32(givenIndex);
+            int multiplier = Convert.ToInt32(givenIndex);
 
             try
             {
-                int product = sum * arr[indexSelection - 1];
+                int product = sum * arr[multiplier - 1];
                 return product;
             }
             catch (IndexOutOfRangeException ioore)
