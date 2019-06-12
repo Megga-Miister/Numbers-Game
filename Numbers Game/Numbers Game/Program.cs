@@ -110,7 +110,7 @@ namespace Numbers_Game
 
         static decimal GetQuotient(int product)
         {
-            Console.WriteLine($"Please enter a number to divide your product, {product} by.");
+            Console.WriteLine($"Please enter a number to divide your product {product} by.");
             string givenDivisor = Console.ReadLine();
             decimal dividend = Convert.ToDecimal(product);
             decimal divisor = Convert.ToDecimal(givenDivisor);
