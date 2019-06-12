@@ -36,6 +36,7 @@ namespace Numbers_Game
                 int[] displayArray = Populate(userArray);
                 int displaySum = GetSum(displayArray);
                 int displayProduct = GetProduct(displayArray,displaySum);
+                decimal displayQuotient = GetQuotient(displayProduct);
                
             }
             catch (FormatException fe)
@@ -98,10 +99,24 @@ namespace Numbers_Game
             }
         }
 
-        //static decimal GetQuotient(int product)
-        //{
+        static decimal GetQuotient(int product)
+        {
+            Console.WriteLine($"Please enter a number to divide your product, {product} by.");
+            string givenDivisor = Console.ReadLine();
+            decimal dividend = Convert.ToDecimal(product);
+            decimal divisor = Convert.ToDecimal(givenDivisor);
 
-        //}
+            try
+            {
+                decimal quotient = decimal.Divide(dividend, divisor);
+                return quotient;
+            }
+            catch (DivideByZeroException dbze)
+            {
+                Console.WriteLine(dbze.Message);
+                return 0;
+            }
+        }
 
     }
 }
