@@ -35,6 +35,7 @@ namespace Numbers_Game
             {
                 int[] displayArray = Populate(userArray);
                 int displaySum = GetSum(displayArray);
+                int displayProduct = GetProduct(displayArray,displaySum);
                
             }
             catch (FormatException fe)
@@ -79,10 +80,23 @@ namespace Numbers_Game
             return sum;
         }
 
-        //static int GetProduct(int[] arr, int sum)
-        //{
+        static int GetProduct(int[] arr, int sum)
+        {
+            Console.WriteLine($"Please select a random number between 1 and {arr.Length}.");
+            string givenIndex = Console.ReadLine();
+            int indexSelection = Convert.ToInt32(givenIndex);
 
-        //}
+            try
+            {
+                int product = sum * arr[indexSelection - 1];
+                return product;
+            }
+            catch (IndexOutOfRangeException ioore)
+            {
+                Console.WriteLine(ioore.Message);
+                throw; 
+            }
+        }
 
         //static decimal GetQuotient(int product)
         //{
