@@ -1,5 +1,5 @@
 ﻿###Numbers Game
-#### Lab01-Exception-Handling
+#### Exception-Handling
 ##### *Author: Meggan Triplett*
 
 ------------------------------

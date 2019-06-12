@@ -39,11 +39,11 @@ namespace Numbers_Game
             }
             catch (FormatException fe)
             {
-                Console.WriteLine($"{fe.Message}");
+                Console.WriteLine(fe.Message);
             }
             catch (OverflowException oe)
             {
-                Console.WriteLine($"{oe.Message}");
+                Console.WriteLine(oe.Message);
             }
 
         }
@@ -71,7 +71,10 @@ namespace Numbers_Game
                 sum += number;
             }
 
-            //TODO Custom Exception, if sum under 20 value too low
+            if(sum < 20)
+            {
+                throw (new Exception($"Value of {sum} is too low."));
+            }
 
             return sum;
         }
