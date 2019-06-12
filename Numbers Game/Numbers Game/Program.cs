@@ -42,7 +42,7 @@ namespace Numbers_Game
                 decimal displayDivisor = displayProduct / displayQuotient;
 
                 Console.WriteLine($"Your array size is: {displayArray.Length}");
-                Console.WriteLine($"The numbers in your array are {displayArray}");
+                Console.WriteLine($"The numbers in the array are {String.Join(", ", displayArray)}");
                 Console.WriteLine($"The sum of the array is {displaySum}");
                 Console.WriteLine($"{displaySum} * {multiplier} = {displayProduct}");
                 Console.WriteLine($"{displayProduct} / {displayDivisor} = {displayQuotient}");
